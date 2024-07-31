@@ -71,7 +71,8 @@
 				"     quoteChar: '\\\"',",
 				"     columnNamesAsHeader: false,",
 				"     multiLineRow: true) ~> bronze3",
-				"bronze1 union(byName: true)~> unionallbronze"
+				"bronze1, bronze2, bronze3 union(byName: true,",
+				"     partitionBy('hash', 1))~> unionallbronze"
 			]
 		}
 	}

@@ -1,5 +1,5 @@
 {
-	"name": "bronze_to_silver",
+	"name": "incrementalload_bronze_to_silver",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -27,7 +27,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "unionallbronze"
+				}
+			],
 			"scriptLines": [
 				"source(useSchema: false,",
 				"     allowSchemaDrift: true,",
@@ -66,7 +70,8 @@
 				"     escapeChar: '\\\\',",
 				"     quoteChar: '\\\"',",
 				"     columnNamesAsHeader: false,",
-				"     multiLineRow: true) ~> bronze3"
+				"     multiLineRow: true) ~> bronze3",
+				"bronze1 union(byName: true)~> unionallbronze"
 			]
 		}
 	}

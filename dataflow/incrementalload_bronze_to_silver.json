@@ -30,6 +30,9 @@
 			"transformations": [
 				{
 					"name": "unionallbronze"
+				},
+				{
+					"name": "aggregate1"
 				}
 			],
 			"scriptLines": [
@@ -44,7 +47,7 @@
 				"     columnDelimiter: ',',",
 				"     escapeChar: '\\\\',",
 				"     quoteChar: '\\\"',",
-				"     columnNamesAsHeader: false,",
+				"     columnNamesAsHeader: true,",
 				"     partitionBy('hash', 1)) ~> bronze1",
 				"source(useSchema: false,",
 				"     allowSchemaDrift: true,",
@@ -57,7 +60,7 @@
 				"     columnDelimiter: ',',",
 				"     escapeChar: '\\\\',",
 				"     quoteChar: '\\\"',",
-				"     columnNamesAsHeader: false) ~> bronze2",
+				"     columnNamesAsHeader: true) ~> bronze2",
 				"source(useSchema: false,",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -69,10 +72,12 @@
 				"     columnDelimiter: ',',",
 				"     escapeChar: '\\\\',",
 				"     quoteChar: '\\\"',",
-				"     columnNamesAsHeader: false,",
+				"     columnNamesAsHeader: true,",
 				"     multiLineRow: true) ~> bronze3",
 				"bronze1, bronze2, bronze3 union(byName: true,",
-				"     partitionBy('hash', 1))~> unionallbronze"
+				"     partitionBy('hash', 1))~> unionallbronze",
+				"unionallbronze aggregate(groupBy(product_id),",
+				"     product_id = ERROR_FUNCTION('')) ~> aggregate1"
 			]
 		}
 	}

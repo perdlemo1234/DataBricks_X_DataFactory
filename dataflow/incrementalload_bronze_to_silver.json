@@ -5,25 +5,7 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"linkedService": {
-						"referenceName": "connect_medallion_files",
-						"type": "LinkedServiceReference"
-					},
-					"name": "bronze1"
-				},
-				{
-					"linkedService": {
-						"referenceName": "connect_medallion_files",
-						"type": "LinkedServiceReference"
-					},
-					"name": "bronze2"
-				},
-				{
-					"linkedService": {
-						"referenceName": "connect_medallion_files",
-						"type": "LinkedServiceReference"
-					},
-					"name": "bronze3"
+					"name": "source1"
 				}
 			],
 			"sinks": [],
@@ -36,45 +18,9 @@
 				}
 			],
 			"scriptLines": [
-				"source(useSchema: false,",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false,",
-				"     format: 'delimited',",
-				"     container: 'bronze',",
-				"     folderPath: 'sales/20240717',",
-				"     fileName: '20240717_090028.csv',",
-				"     columnDelimiter: ',',",
-				"     escapeChar: '\\\\',",
-				"     quoteChar: '\\\"',",
-				"     columnNamesAsHeader: true,",
-				"     partitionBy('hash', 1)) ~> bronze1",
-				"source(useSchema: false,",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false,",
-				"     format: 'delimited',",
-				"     container: 'bronze',",
-				"     folderPath: 'sales/20240717',",
-				"     fileName: '20240717_110049.csv',",
-				"     columnDelimiter: ',',",
-				"     escapeChar: '\\\\',",
-				"     quoteChar: '\\\"',",
-				"     columnNamesAsHeader: true) ~> bronze2",
-				"source(useSchema: false,",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false,",
-				"     format: 'delimited',",
-				"     container: 'bronze',",
-				"     folderPath: 'sales/20240717',",
-				"     fileName: '20240717_163100.csv',",
-				"     columnDelimiter: ',',",
-				"     escapeChar: '\\\\',",
-				"     quoteChar: '\\\"',",
-				"     columnNamesAsHeader: true,",
-				"     multiLineRow: true) ~> bronze3",
-				"bronze1, bronze2, bronze3 union(byName: true,",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source1",
+				" union(byName: true,",
 				"     partitionBy('hash', 1))~> unionallbronze",
 				"unionallbronze aggregate(groupBy(product_id),",
 				"     product_id = ERROR_FUNCTION('')) ~> aggregate1"

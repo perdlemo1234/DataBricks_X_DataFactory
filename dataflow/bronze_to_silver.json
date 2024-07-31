@@ -1,0 +1,73 @@
+{
+	"name": "bronze_to_silver",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "connect_medallion_files",
+						"type": "LinkedServiceReference"
+					},
+					"name": "bronze1"
+				},
+				{
+					"linkedService": {
+						"referenceName": "connect_medallion_files",
+						"type": "LinkedServiceReference"
+					},
+					"name": "bronze2"
+				},
+				{
+					"linkedService": {
+						"referenceName": "connect_medallion_files",
+						"type": "LinkedServiceReference"
+					},
+					"name": "bronze3"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(useSchema: false,",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'delimited',",
+				"     container: 'bronze',",
+				"     folderPath: 'sales/20240717',",
+				"     fileName: '20240717_090028.csv',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: false,",
+				"     partitionBy('hash', 1)) ~> bronze1",
+				"source(useSchema: false,",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'delimited',",
+				"     container: 'bronze',",
+				"     folderPath: 'sales/20240717',",
+				"     fileName: '20240717_110049.csv',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: false) ~> bronze2",
+				"source(useSchema: false,",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'delimited',",
+				"     container: 'bronze',",
+				"     folderPath: 'sales/20240717',",
+				"     fileName: '20240717_163100.csv',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: false,",
+				"     multiLineRow: true) ~> bronze3"
+			]
+		}
+	}
+}

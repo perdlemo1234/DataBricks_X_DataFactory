@@ -1,0 +1,30 @@
+{
+	"name": "medallion",
+	"properties": {
+		"activities": [
+			{
+				"name": "Bronze_To_Silver",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Bronze_To_Silver"
+				},
+				"linkedServiceName": {
+					"referenceName": "medallion",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-07-31T04:36:52Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "DataBricksXDataFactory",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7302847c-05b6-4b03-8208-d44aca71875a",
+		"tenantId": "b2e47f30-cd7d-4a4e-a5da-b18cf1a4151b"
+	}
+}

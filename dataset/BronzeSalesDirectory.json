@@ -1,5 +1,5 @@
 {
-	"name": "BronzeSales",
+	"name": "BronzeSalesDirectory",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "BronzeSilverGold",

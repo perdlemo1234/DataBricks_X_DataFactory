@@ -5,25 +5,25 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"name": "source1"
+					"dataset": {
+						"referenceName": "BronzeSalesDirectory",
+						"type": "DatasetReference"
+					},
+					"name": "BronzeSalesDirectory"
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "unionallbronze"
-				},
-				{
-					"name": "aggregate1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1",
-				" union(byName: true,",
-				"     partitionBy('hash', 1))~> unionallbronze",
-				"unionallbronze aggregate(groupBy(product_id),",
-				"     product_id = ERROR_FUNCTION('')) ~> aggregate1"
+				"source(output(",
+				"          product_id as string,",
+				"          sales_revenue as string,",
+				"          created_date as string,",
+				"          modified_date as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> BronzeSalesDirectory"
 			]
 		}
 	}

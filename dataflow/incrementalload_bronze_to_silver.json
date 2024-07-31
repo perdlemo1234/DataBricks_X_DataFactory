@@ -3,11 +3,7 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [
-				{
-					"name": "source1"
-				}
-			],
+			"sources": [],
 			"sinks": [],
 			"transformations": [
 				{
@@ -18,8 +14,6 @@
 				}
 			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1",
 				" union(byName: true,",
 				"     partitionBy('hash', 1))~> unionallbronze",
 				"unionallbronze aggregate(groupBy(product_id),",

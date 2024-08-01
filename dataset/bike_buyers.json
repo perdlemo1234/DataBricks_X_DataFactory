@@ -1,0 +1,78 @@
+{
+	"name": "bike_buyers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BronzeSilverGold",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "bike_buyers",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Bike Sales Dashboard.xlsx",
+				"fileSystem": "test"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "Martial Status",
+				"type": "String"
+			},
+			{
+				"name": "Gender",
+				"type": "String"
+			},
+			{
+				"name": "Income",
+				"type": "String"
+			},
+			{
+				"name": "Children",
+				"type": "String"
+			},
+			{
+				"name": "Education",
+				"type": "String"
+			},
+			{
+				"name": "Occupation",
+				"type": "String"
+			},
+			{
+				"name": "Home Owner",
+				"type": "String"
+			},
+			{
+				"name": "Cars",
+				"type": "String"
+			},
+			{
+				"name": "Commute Distance",
+				"type": "String"
+			},
+			{
+				"name": "Region",
+				"type": "String"
+			},
+			{
+				"name": "Age",
+				"type": "String"
+			},
+			{
+				"name": "Age Brackets",
+				"type": "String"
+			},
+			{
+				"name": "Purchased Bike",
+				"type": "String"
+			}
+		]
+	}
+}

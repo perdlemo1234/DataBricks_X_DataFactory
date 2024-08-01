@@ -6,26 +6,34 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Bike_Buyers",
+						"referenceName": "bike_buyers",
 						"type": "DatasetReference"
 					},
-					"name": "bikebuyers"
+					"name": "source1"
 				}
 			],
-			"sinks": [
-				{
-					"name": "sink1"
-				}
-			],
+			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: false,",
+				"source(output(",
+				"          ID as string,",
+				"          {Martial Status} as string,",
+				"          Gender as string,",
+				"          Income as string,",
+				"          Children as string,",
+				"          Education as string,",
+				"          Occupation as string,",
+				"          {Home Owner} as string,",
+				"          Cars as string,",
+				"          {Commute Distance} as string,",
+				"          Region as string,",
+				"          Age as string,",
+				"          {Age Brackets} as string,",
+				"          {Purchased Bike} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> bikebuyers",
-				"bikebuyers sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     ignoreNoFilesFound: false) ~> source1"
 			]
 		}
 	}

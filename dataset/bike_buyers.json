@@ -14,6 +14,7 @@
 				"fileName": "Bike Sales Dashboard.xlsx",
 				"fileSystem": "test"
 			},
+			"range": "B4:E14",
 			"firstRowAsHeader": true
 		},
 		"schema": [

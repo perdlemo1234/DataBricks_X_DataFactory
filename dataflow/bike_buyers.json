@@ -12,10 +12,6 @@
 					"name": "bikebuyer"
 				},
 				{
-					"dataset": {
-						"referenceName": "Pivot_Table",
-						"type": "DatasetReference"
-					},
 					"name": "source2"
 				}
 			],
@@ -81,8 +77,7 @@
 				"          Column_37 as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source2"
+				"     validateSchema: false) ~> source2"
 			]
 		}
 	}

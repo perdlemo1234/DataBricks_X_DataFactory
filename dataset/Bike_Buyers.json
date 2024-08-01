@@ -1,0 +1,65 @@
+{
+	"name": "Bike_Buyers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BronzeSilverGold",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "bike_buyers",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Bike Sales Dashboard.xlsx",
+				"fileSystem": "test"
+			},
+			"range": "A:N",
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}

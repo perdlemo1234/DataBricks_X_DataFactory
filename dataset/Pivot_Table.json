@@ -14,7 +14,7 @@
 				"fileName": "Bike Sales Dashboard.xlsx",
 				"fileSystem": "test"
 			},
-			"range": "$AH$:$AK$"
+			"range": "AH3:AK58"
 		},
 		"schema": [
 			{

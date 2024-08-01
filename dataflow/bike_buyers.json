@@ -12,7 +12,11 @@
 					"name": "bikebuyer"
 				},
 				{
-					"name": "source2"
+					"dataset": {
+						"referenceName": "Pivot_table",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
 				}
 			],
 			"sinks": [],
@@ -77,7 +81,8 @@
 				"          Column_37 as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1"
 			]
 		}
 	}

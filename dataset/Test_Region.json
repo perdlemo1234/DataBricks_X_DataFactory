@@ -1,0 +1,38 @@
+{
+	"name": "Test_Region",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BronzeSilverGold",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Store_ID_Test",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Region_and_Sub_Region.xlsx",
+				"fileSystem": "test"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Store ID",
+				"type": "String"
+			},
+			{
+				"name": "Store Name",
+				"type": "String"
+			},
+			{
+				"name": "Sales Revenue",
+				"type": "String"
+			},
+			{
+				"name": "Region",
+				"type": "String"
+			}
+		]
+	}
+}

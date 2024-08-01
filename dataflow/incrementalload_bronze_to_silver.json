@@ -28,6 +28,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
+				"     wildcardPaths:['*.csv'],",
 				"     partitionBy('hash', 1)) ~> BronzeSalesDirectory",
 				"BronzeSalesDirectory union(byName: true)~> union1"
 			]

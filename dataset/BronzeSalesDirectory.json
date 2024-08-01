@@ -5,6 +5,14 @@
 			"referenceName": "BronzeSilverGold",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"container_name": {
+				"type": "string"
+			},
+			"directory_path": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

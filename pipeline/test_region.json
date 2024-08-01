@@ -1,5 +1,5 @@
 {
-	"name": "copy_data",
+	"name": "test_region",
 	"properties": {
 		"activities": [
 			{
@@ -19,8 +19,8 @@
 				}
 			},
 			{
-				"name": "Copy data2",
-				"type": "Copy",
+				"name": "Azure Function1",
+				"type": "AzureFunctionActivity",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -29,24 +29,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "ExcelSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						}
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "Pivot_table",
-						"type": "DatasetReference"
-					}
-				]
+				"userProperties": []
 			}
 		],
 		"annotations": []

@@ -15,9 +15,11 @@ _Silver_
 
 _Gold_
 
-## _Medallion Proceudure:_  
+## _Medallion Procedure:_  
 
 _Bronze -> Silver_
 
+_Silver -> Gold_  
 
-_Silver -> Gold_
+## _Small technical things to take note of:_
+

@@ -15,11 +15,19 @@ _Silver_
 
 _Gold_
 
+### _Different Types of Load:_
+_Differential Load_
+
+_Full Load_
+
 ## _Medallion Procedure:_  
 
 _Bronze -> Silver_
 
 _Silver -> Gold_  
 
+
 ## _Small technical things to take note of:_
+
+How many?? HAHA
 

@@ -15,3 +15,9 @@ _Silver_
 
 _Gold_
 
+## _Medallion Proceudure:_  
+
+_Bronze -> Silver_
+
+
+_Silver -> Gold_

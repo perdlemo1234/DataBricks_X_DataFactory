@@ -65,7 +65,7 @@ Sadly, there's not a picture that I can put because parquet format can be viewed
 - Has high qualty and purposeful data which has undergone extensive cleaning, transformation, and aggregation.
 - Typically very structured and is ready for consumption by analysts using software like Power BI to complete Predictive Modelling , Machine Learning, and Data Mining.
 
-Typically, this involves combining columns from different datasets or using a simple arithemtic calculation to obtain a brand new column. Further details will be discussed within  
+###### Typically, this involves combining columns from different datasets or using a simple arithemtic calculation to obtain a brand new column. Further details will be discussed within  
 ---
 ## _Different Types of Load:_
 _Differential Load_

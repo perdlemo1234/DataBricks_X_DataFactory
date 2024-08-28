@@ -17,7 +17,7 @@ This is a documentation of my journey implementing a medallion architecture wher
 **Examples of Landing Zone:**
 _Cloud Storage Bucket:_ An Amazon S3 bucket or Azure Blob Storage where raw data files ( e.g. CSVs, JSONs) from different sources are uploaded. 
 _File System Directory:_ Collect log files or data dumps from various applications. 
-~~
+---
 ### _Bronze Layer:_
 ![image](https://github.com/user-attachments/assets/63ca2655-9715-4c22-afd0-f6394878a68f)
 ###### The bronze layer serves as: 
@@ -32,7 +32,7 @@ Since I was starting from scratch, I artifically created a number of bronze csv 
 - The Bronze directory can be split into different categories tackling different business challenges/problems ( e.g. sales , product , health_care ) 
 - Continuing the breadcrumb trail, directories are split into "ingestion_daes" like _( 20240710 , 20240715 , 20240717 )_ . Note that the naming convention is now ONLY dates and not date_time. 
 - Within each "ingestion_date" directory, multiple .csv files are created based on certain ingestion time intervals The CSV files . By logic, all .csv files should have their "date_time" greater than the title of the directory they belong to. However, sometimes, the system or manual input might make an input mistake and may want to include a file which originates from an earlier date. So, technially, files from any "date_time" can be included ; however, if majority of the files are from an "earlier date" , it might be worth investigating further.   
-
+---
 ### _Config Folder:_
 ###### The config folder serves as: 
 - Centralising various settings required for data pipelines , processing jobs or applications
@@ -42,7 +42,7 @@ Since I was starting from scratch, I artifically created a number of bronze csv 
 However, this was created from scratch and Rnd ; so , the tables _"offset_date"_ and _"table"_ are included for simplicity:  
 
 ![image](https://github.com/user-attachments/assets/248ecfa0-899e-472c-abe9-0cd756f3a5a1)
-
+---
 ### _Silver Layer:_
 
 ### _Gold Layer:_

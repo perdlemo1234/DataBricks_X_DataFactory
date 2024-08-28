@@ -15,8 +15,8 @@ This is a documentation of my journey implementing a medallion architecture wher
 - Landing Zone may not be necessary but it can be very helpful when the pipeline goes through 2-3 layers compared to only 1 layer ( e.g. bronze layer )
 
 **Examples of Landing Zone:**
-_Cloud Storage Bucket:_ An Amazon S3 bucket or Azure Blob Storage where raw data files ( e.g. CSVs, JSONs) from different sources are uploaded. 
-_File System Directory:_ Collect log files or data dumps from various applications. 
+- **_Cloud Storage Bucket:_** An Amazon S3 bucket or Azure Blob Storage where raw data files ( e.g. CSVs, JSONs) from different sources are uploaded. 
+- **_File System Directory:_** Collect log files or data dumps from various applications. 
 ---
 ### _Bronze Layer:_
 ![image](https://github.com/user-attachments/assets/63ca2655-9715-4c22-afd0-f6394878a68f)

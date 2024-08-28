@@ -20,7 +20,7 @@ This is a documentation of my journey implementing a medallion architecture wher
 ---
 ### _Bronze Layer:_
 ![image](https://github.com/user-attachments/assets/63ca2655-9715-4c22-afd0-f6394878a68f)
-###### The Bronze Layer here has the following notable points: 
+### The Bronze Layer here has these following notable points: 
 - The foundational layer for raw unprocessed data ingested from different source system or from the landing zone.
 - Here, data is in its raw form but organised in a structured manner, most likely in directory format.  
 - Commonly used formats include CSV, JSON, Parquet, Avro.

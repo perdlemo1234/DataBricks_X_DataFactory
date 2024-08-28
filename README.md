@@ -25,7 +25,8 @@ _File System Directory:_ Collect log files or data dumps from various applicatio
 - Here, data is in its raw form but organised in a structured manner, most likely in directory format.  
 - Commonly used formats include CSV, JSON, Parquet, Avro.
 
-Since I was starting from scratch, I artifically created a number of bronze csv files , seperated them into different directories based on distinct topics ( E.G. sales & product )
+Since I was starting from scratch, I artifically created a number of bronze csv files , seperated them into different directories based on distinct topics ( E.G. sales & product )  
+
 ![image](https://github.com/user-attachments/assets/8613b92a-689d-4572-b12f-5ae707406a61)
 
 

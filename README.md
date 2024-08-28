@@ -34,6 +34,13 @@ Since I was starting from scratch, I artifically created a number of bronze csv 
 - Within each "ingestion_date" directory, multiple .csv files are created based on certain ingestion time intervals The CSV files . By logic, all .csv files should have their "date_time" greater than the title of the directory they belong to. However, sometimes, the system or manual input might make an input mistake and may want to include a file which originates from an earlier date. So, technially, files from any "date_time" can be included ; however, if majority of the files are from an "earlier date" , it might be worth investigating further.   
 
 ### _Config Folder:_
+###### The config folder serves as: 
+- Centralising various settings required for data pipelines , processing jobs or applications
+- Different environment may require different settings. The config allows us to manage these settings in a controlled manner.
+- Change record of data when date is later than the "offset_date". "offset_date" is then updated accordingly. 
+
+However, this was created from scratch and Rnd ; so , the tables _"offset_date"_ and _"table"_ are included for simplicity:
+![image](https://github.com/user-attachments/assets/248ecfa0-899e-472c-abe9-0cd756f3a5a1)
 
 ### _Silver Layer:_
 

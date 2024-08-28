@@ -27,8 +27,8 @@ _File System Directory:_ Collect log files or data dumps from various applicatio
 
 Since I was starting from scratch, I artifically created a number of bronze csv files , seperated them into different directories based on distinct topics ( E.G. sales & product )  
 
-![image](https://github.com/user-attachments/assets/8613b92a-689d-4572-b12f-5ae707406a61)
-
+![image](https://github.com/user-attachments/assets/fc32731d-dfd9-4bf4-8c5a-f2942d244b32)
+- Date & Time format was used to name the csv file in accordance to mo
 
 
 _[ insert image of formatting ] and explain what I need to look out for? ]_

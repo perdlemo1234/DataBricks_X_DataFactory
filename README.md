@@ -5,7 +5,7 @@ This is a documentation of my journey implementing a medallion architecture wher
 
 ## _Stages of the Medallion Architecture explained:_  
 ### **Outline:**
-This architecture is organised into a series of data layers, each serving a specific purpose in handling the transformation and cleansing of the data. Essentially, at each stage, data is made more organised and keep tracks of when each record is updated and how it's being updated. Implemented for modern data lakes and data platforms to facilitate data management & analytics.  
+###### This architecture is organised into a series of data layers, each serving a specific purpose in handling the transformation and cleansing of the data. Essentially, at each stage, data is made more organised and keep tracks of when each record is updated and how it's being updated. Implemented for modern data lakes and data platforms to facilitate data management & analytics.  
 ---
 ### _Landing Zone (optional):_  
 ###### 

@@ -44,15 +44,29 @@ However, this was created from scratch and Rnd ; so , the tables _"offset_date"_
 ![image](https://github.com/user-attachments/assets/248ecfa0-899e-472c-abe9-0cd756f3a5a1)
 ---
 ### _Silver Layer:_
+![image](https://github.com/user-attachments/assets/cff9a073-6427-4527-9541-8fc16f7ce9cc)
+### The Silver Layer serves as where: 
+- Intial basic cleaning/transformation occurs
+- Involves deduplication, correcting errors , and handling missing values.
+- Transformed into a more structured layer. Might involve converting data-types, standardising formats, and applying basic transformations to make data more usable.
+- Data should be stored under a Parquet format -> _Website that explains the advantages of Parquet format_ ( https://www.databricks.com/glossary/what-is-parquet#:~:text=Parquet%20is%20optimized%20to%20work,therefore%20greatly%20minimizing%20the%20IO. )
 
+In the silver layer, the files are stored within directories based on subject categories. The files must be read through code because they are stored in a Parquet format. 
+
+Sadly, there's not a picture that I can put because parquet format can be viewed in table format when code is executed. _(no credits left)_ Through the Rnd, the expected silver parquet file output should be consolidating all available records and also updating records which has been modified after the offset date. 
+
+FUrther details to be discussed within the medallion procedure. 
+----
 ### _Gold Layer:_
 
+
+---
 ## _Different Types of Load:_
 _Differential Load_
 
 _Full Load_
 
-## _Medallion Procedure ( in Databricks ) :_  
+## _Medallion Procedure ( in Databricks ) - Basically, what's the logic behind the code?:_  
 
 _Bronze -> Silver_
 

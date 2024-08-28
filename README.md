@@ -56,7 +56,7 @@ In the silver layer, the files are stored within directories based on subject ca
 #### _How would the silver file look like?_
 Sadly, there's not a picture that I can put because parquet format can be viewed under a .csv format when code is executed. _(no credits left)_ Through the Rnd, the expected silver parquet file output should be consolidating all available records and also updating records which has been modified after the offset date. 
 
-FUrther details to be discussed within the medallion procedure. 
+###### Further details to be discussed within the medallion procedure:
 ----
 ### _Gold Layer:_
 ![image](https://github.com/user-attachments/assets/1eda5d0c-c477-4495-b8aa-3e94ad740772)  

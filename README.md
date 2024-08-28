@@ -5,7 +5,7 @@ This is a documentation of my journey implementing a medallion architecture wher
 
 ## _Stages of the Medallion Architecture explained:_  
 ### **Outline:**
-###### This architecture is organised into a series of data layers, each serving a specific purpose in handling the transformation and cleansing of the data. Essentially, at each stage, data is made more organised and keep tracks of when each record is updated and how it's being updated. Implemented for modern data lakes and data platforms to facilitate data management & analytics.  
+###### This architecture is organised into a series of data layers, each serving a specific purpose in handling the transformation and cleansing of the data. Essentially, at each stage, data is made more organised and keep tracks of when each record is updated and how it's being updated. Implemented for modern data lakes and data platforms to facilitate data management & analytics. Link explaning the medallion architecture -> (https://www.databricks.com/glossary/medallion-architecture#:~:text=The%20Gold%20layer%20is%20for,quality%20rules%20are%20applied%20here )
 ---
 ### _Landing Zone (optional):_  
 ###### 
@@ -20,7 +20,7 @@ This is a documentation of my journey implementing a medallion architecture wher
 ---
 ### _Bronze Layer:_
 ![image](https://github.com/user-attachments/assets/63ca2655-9715-4c22-afd0-f6394878a68f)
-###### The bronze layer serves as: 
+###### The Bronze Layer here has the following notable points: 
 - The foundational layer for raw unprocessed data ingested from different source system or from the landing zone.
 - Here, data is in its raw form but organised in a structured manner, most likely in directory format.  
 - Commonly used formats include CSV, JSON, Parquet, Avro.
@@ -45,7 +45,7 @@ However, this was created from scratch and Rnd ; so , the tables _"offset_date"_
 ---
 ### _Silver Layer:_
 ![image](https://github.com/user-attachments/assets/cff9a073-6427-4527-9541-8fc16f7ce9cc)
-### The Silver Layer serves as where: 
+### The Silver Layer here has these following notable points: 
 - Intial basic cleaning/transformation occurs
 - Involves deduplication, correcting errors , and handling missing values.
 - Transformed into a more structured layer. Might involve converting data-types, standardising formats, and applying basic transformations to make data more usable.
@@ -53,13 +53,18 @@ However, this was created from scratch and Rnd ; so , the tables _"offset_date"_
 
 In the silver layer, the files are stored within directories based on subject categories. The files must be read through code because they are stored in a Parquet format. 
 
-Sadly, there's not a picture that I can put because parquet format can be viewed in table format when code is executed. _(no credits left)_ Through the Rnd, the expected silver parquet file output should be consolidating all available records and also updating records which has been modified after the offset date. 
+#### _How would the silver file look like?_
+Sadly, there's not a picture that I can put because parquet format can be viewed under a .csv format when code is executed. _(no credits left)_ Through the Rnd, the expected silver parquet file output should be consolidating all available records and also updating records which has been modified after the offset date. 
 
 FUrther details to be discussed within the medallion procedure. 
 ----
 ### _Gold Layer:_
+![image](https://github.com/user-attachments/assets/1eda5d0c-c477-4495-b8aa-3e94ad740772)  
+### The Gold Layer here has these following notable points: 
+- Has high qualty and purposeful data which has undergone extensive cleaning, transformation, and aggregation.
+- Typically very structured and is ready for consumption by analysts using software like Power BI to complete Predictive Modelling , Machine Learning, and Data Mining.
 
-
+Typically, this involves combining columns from different datasets or using a simple arithemtic calculation to obtain a brand new column. Further details will be discussed within  
 ---
 ## _Different Types of Load:_
 _Differential Load_

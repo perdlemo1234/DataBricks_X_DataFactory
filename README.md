@@ -94,6 +94,8 @@ _Incremental Load:_
 - Lower impact on system performance during loading time.
 ---
 ## _Medallion Procedure ( in Databricks ) - Basically, what's the logic behind the code?:_  
+Upon explaining the unique layers and loading methods, we can finally employ , test , and verify data transformations at each major data layer. 
+
 _Bronze -> Silver:_
 
 
@@ -103,5 +105,4 @@ _Silver -> Gold:_
 
 ## _Small technical things to take note of:_
 
-How many?? HAHA
 

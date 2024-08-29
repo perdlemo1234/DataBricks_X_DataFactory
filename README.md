@@ -91,7 +91,6 @@ _Incremental Load_
 - Optimal for datasets with vast amount of data - full loads wold be impractial... ( too much time and effort! )
 - Ideal for environments with frequent data changes or updates.
 - Lower impact on system performance during loading time.
-
 ---
 ## _Medallion Procedure ( in Databricks ) - Basically, what's the logic behind the code?:_  
 

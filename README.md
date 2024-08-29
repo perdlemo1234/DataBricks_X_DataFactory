@@ -79,7 +79,10 @@ As the name suggests, only a portion of the data from the target table is update
 _Imagine this Scenario:_
 - We have millions of records in the entire table, but we only need a select few of records to be updated 
 - Also, the window of opportunity to upload might be limited . File is very huge so it is not possible to reload everything at once.
-- Hence, we need to figure out which records _#1) Needs an Update_  **&** _#2) Can be inserted from the source table as a fresh/new record_
+- Hence, we need to figure out which records
+    _#1)_ Needs an Update_
+    **&**
+    _#2) Can be inserted from the source table as a fresh/new record_
 - This is when Incremental Load comes into place. 
 ---
 **How do we know when to use which load?**   

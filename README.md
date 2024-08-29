@@ -79,7 +79,7 @@ As the name suggests, only a portion of the data from the target table is update
 _Imagine this Scenario:_
 - We have millions of records in the entire table, but we only need a select few of records to be updated 
 - Also, the window of opportunity to upload might be limited . File is very huge so it is not possible to reload everything at once.
-- Hence, we need to figure out which records #1) Needs an Update  **&** #2) Can be inserted from the source table as a fresh/new record
+- Hence, we need to figure out which records _#1) Needs an Update_  **&** _#2) Can be inserted from the source table as a fresh/new record_
 - This is when Incremental Load comes into place. 
 ---
 **How do we know when to use which load?**   
@@ -91,19 +91,35 @@ _Full Load:_
 
 _Incremental Load:_
 ![image](https://github.com/user-attachments/assets/bd64acd6-a86f-45ae-b61b-bec57089a400) <-- ( Databricks function created to carry out incremental load )
-
-- Optimal for datasets with vast amount of data - full loads wold be impractial... ( too much time and effort! )
+- Optimal for datasets with vast amount of data - full loads wold be impractial... **_( Too much Time and Effort! )_**
 - Ideal for environments with frequent data changes or updates.
 - Lower impact on system performance during loading time.
 ---
 ## _Medallion Procedure ( in Databricks ) - Basically, what's the logic behind the code?:_  
 Upon explaining the unique layers and loading methods, we can finally employ , test , and verify data transformations at each major data layer. 
 
-_Bronze -> Silver:_
-Below consists 
+#### _Seperate diretories with offset date (excluding time):_
+![image](https://github.com/user-attachments/assets/63a2de86-5d40-4e0c-a1a2-eaaffdeb6130)  
+This function seperates the directory paths into 2 arrays. One where the dates are before the offset date, and the other is after the _offset date._ 
 
 
-_Silver -> Gold:_  
+
+
+#### _Bronze -> Silver:_
+Below consists a rough outline of how my experimented transformation would look like: 
+1) Load Bronze .csv files  ( from landing zone ) 
+2) Read offset date from offset file from a specific category.
+3) Compare offsetdate with modified date from source file.
+4) If modified date is greater than offset date, we update that record into silver dataset. If a specific record is new; then, insert that as a new record into the silver table.
+5) Perform deduplication
+6) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
+
+[ Reunderstand the code ]
+[Check code and comment approriately]
+[Give my specific example and give appropriate and elaborate analysis of the code 
+[Comment why there's no bronze->silver function]
+
+#### _Silver -> Gold:_  
 
 
 ## _Small technical things to take note of:_

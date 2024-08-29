@@ -89,6 +89,8 @@ _Full Load:_
 - When consistency is a very important aspect of the transformation.
 
 _Incremental Load:_
+![image](https://github.com/user-attachments/assets/bd64acd6-a86f-45ae-b61b-bec57089a400)
+
 - Optimal for datasets with vast amount of data - full loads wold be impractial... ( too much time and effort! )
 - Ideal for environments with frequent data changes or updates.
 - Lower impact on system performance during loading time.
@@ -97,7 +99,7 @@ _Incremental Load:_
 Upon explaining the unique layers and loading methods, we can finally employ , test , and verify data transformations at each major data layer. 
 
 _Bronze -> Silver:_
-
+Below consists 
 
 
 _Silver -> Gold:_  

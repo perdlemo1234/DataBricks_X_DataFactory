@@ -98,21 +98,28 @@ _Incremental Load:_
 ## _Medallion Procedure ( in Databricks ) - Basically, what's the logic behind the code?:_  
 Upon explaining the unique layers and loading methods, we can finally employ , test , and verify data transformations at each major data layer. 
 
-#### _Seperate diretories with offset date (excluding time):_
-![image](https://github.com/user-attachments/assets/63a2de86-5d40-4e0c-a1a2-eaaffdeb6130)  
-This function seperates the directory paths into 2 arrays. One where the dates are before the offset date, and the other is after the _offset date._ 
+#### _Getting directories by date (excluding time):_
+![image](https://github.com/user-attachments/assets/63a2de86-5d40-4e0c-a1a2-eaaffdeb6130) <- "get_directories_by_date" function 
+This function seperates the directory paths into 2 arrays. One where the dates are before the _offset date,_ and the other is after the _offset date._ 
 
+So, the function returns arrays of directory paths called "later_directories" , "not_later_directories" and "offset_date_path"
 
-
+Thought it might seem quite pointless now, the seperation of directories allows us to effectively pinpoint which directories to focus on / save resources finding the latest file. 
 
 #### _Bronze -> Silver:_
-Below consists a rough outline of how my experimented transformation would look like: 
-1) Load Bronze .csv files  ( from landing zone ) 
-2) Read offset date from offset file from a specific category.
-3) Compare offsetdate with modified date from source file.
-4) If modified date is greater than offset date, we update that record into silver dataset. If a specific record is new; then, insert that as a new record into the silver table.
-5) Perform deduplication
-6) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
+##### Below consists a rough outline of how my experimented transformation would look like if there's a **full load** : 
+1) Load Bronze .csv files  ( from landing zone )
+2) Use the ( "get_directories_by_date" ) function to obtain the array ( "later_directories" ) which contains file paths of the directories past the "offset_date".
+3) From "later_directories" array, obtain the **latest** "date" directory. From **latest** "date" directory, choose **latest** "date_time" file for full loading.
+4) Perform "full_load" using the "full_load" function. _( Additional details to be discussed later on )_
+
+
+
+5) Read offset date from offset file from a specific category.
+6) Compare offsetdate with modified date from source file.
+7) If modified date is greater than offset date, we update that record into silver dataset. If a specific record is new; then, insert that as a new record into the silver table.
+8) Perform deduplication.
+9) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
 
 [ Reunderstand the code ]
 [Check code and comment approriately]

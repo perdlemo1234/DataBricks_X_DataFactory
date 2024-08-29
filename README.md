@@ -84,12 +84,13 @@ _Imagine this Scenario:_
 ---
 **How do we know when to use which load?**   
 _Full Load:_
+![image](https://github.com/user-attachments/assets/4cacda52-ff53-4d22-b469-5f37f432a8dd) <-- ( Databricks function created to carry out full load )
 - When setting up a new data system or data warehouse, full load can be more straightforward & efficient as it doesn't require tracking
 - If small volumes of data, then it can be more straightforward & effiicent because it doesn't require tracking changes.
 - When consistency is a very important aspect of the transformation.
 
 _Incremental Load:_
-![image](https://github.com/user-attachments/assets/bd64acd6-a86f-45ae-b61b-bec57089a400)
+![image](https://github.com/user-attachments/assets/bd64acd6-a86f-45ae-b61b-bec57089a400) <-- ( Databricks function created to carry out incremental load )
 
 - Optimal for datasets with vast amount of data - full loads wold be impractial... ( too much time and effort! )
 - Ideal for environments with frequent data changes or updates.

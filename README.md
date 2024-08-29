@@ -132,6 +132,6 @@ Thought it might seem quite pointless now, the seperation of directories allows 
 ### _Silver -> Gold:_  
 
 
-## _Small technical things to take note of:_
+## _Small Technical Things to take note of:_
 
 

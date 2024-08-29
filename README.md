@@ -110,28 +110,26 @@ So, the function returns arrays of directory paths called "later_directories" , 
 
 Thought it might seem quite pointless now, the seperation of directories allows us to effectively pinpoint which directories to focus on / save resources finding the latest file. 
 
-#### _Bronze -> Silver:_
-##### Below is a rough outline of how the experimented transformation would look like if there's a _**FULL LOAD**_: 
+### _Bronze -> Silver:_
+#### Below is a rough outline of how the experimented transformation would look like if there's a _**FULL LOAD**_: 
 1) Load Bronze .csv files  ( from landing zone )
 2) Use the ( "get_directories_by_date" ) function to obtain the array ( "later_directories" ) which contains file paths of the directories past the "offset_date".
 3) From "later_directories" array, obtain the **latest** "date" directory. Subsequently, from **latest** "date" directory, choose **latest** "date_time" file for full loading.
 4) Perform "full_load" using the "full_load" function. _( Further details can be referred under small technical things )_
 5) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file.
 
-##### Below is a rough outline of how the experimented transformation would look like if there's an _**INCREMENTAL LOAD**_:
+#### Below is a rough outline of how the experimented transformation would look like if there's an _**INCREMENTAL LOAD**_:
 1) Load Bronze .csv files  ( from landing zone )
 2) Perform "Incremental_Load" using the "incremental_load" function provided. ( Most important, perform deduplication! )
 3) ![image](https://github.com/user-attachments/assets/c07d99c9-058f-4049-8454-18b654c2586c) <- The main part of incremental loading.  
 4) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
 
-**NOTE!!:**
+**NOTE!!:** [ TO BE POLISHED TOMORROW ]
 - Blob Service CLient Object. (specific to ADF) How does it work? How do we do it? 
 - Both load functions don't have thorough explanation because both are similar. I just need to point out some major details!
-- 
+- [Comment why there's no bronze->silver function]
 
-[Comment why there's no bronze->silver function]
-
-#### _Silver -> Gold:_  
+### _Silver -> Gold:_  
 
 
 ## _Small technical things to take note of:_

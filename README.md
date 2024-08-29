@@ -70,7 +70,7 @@ Sadly, there's not a picture that I can put because parquet format can be viewed
 ## _Different Types of Load:_
 _Full Load / Destructive Load:_  
 ![image](https://github.com/user-attachments/assets/b0dd11ec-ecf8-4519-8f24-05f8ef06aa90)
-Either called full or destructive load.The full load in ETL involves truncating the target table before loading ALL data from source to target table. Hence, it being called a destructive load. Truncating involves removing _**ALL records**_ from the table in a database, but it does not affect the schema ; essentially, leaving a blank skeletion / structure. This type of load is very straightforward and can be easily implemented. 
+Either called full or destructive load. The full load in ETL involves truncating the target table before loading ALL data from source to target table. Hence, it being called a destructive load. Truncating involves removing _**ALL records**_ from the table in a database, but it does not affect the schema ; essentially, leaving a blank skeletion / structure. This type of load is very straightforward and can be easily implemented. 
 
 _Differential/Incremental/Fractional Load:_  
 ![image](https://github.com/user-attachments/assets/8c32e280-4b79-4f98-b1be-86a012abde7a)

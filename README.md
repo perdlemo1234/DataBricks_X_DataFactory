@@ -81,7 +81,7 @@ _Imagine this Scenario:_
 - This is when Incremental Load comes into place. 
 
 ---
-**How do we know when to use which load?**
+**How do we know when to use which load?**   
 _Full Load_
 - When setting up a new data system or data warehouse, full load can be more straightforward & efficient as it doesn't require tracking
 - If small volumes of data, then it can be more straightforward & effiicent because it doesn't require tracking changes.

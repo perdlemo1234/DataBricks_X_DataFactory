@@ -68,10 +68,31 @@ Sadly, there's not a picture that I can put because parquet format can be viewed
 ###### Typically, this involves combining columns from different datasets or using a simple arithemtic calculation to obtain a brand new column. Further details will be discussed within  
 ---
 ## _Different Types of Load:_
-_Differential Load_
+_Full Load / Destructive Load_
+Either called full or destructive load.The full load in ETL involves truncating the target table before loading ALL data from source to target table. Hence, it being called a destructive load. Truncating involves removing _**ALL records**_ from the table in a database, but it does not affect the schema ; essentially, leaving a blank skeletion / structure. This type of load is very straightforward and can be easily implemented. 
 
+_Differential/Incremental/Fractional Load_
+As the name suggests, only a portion of the data from the target table is updated. Why do we do this? In my experimentation, I compared the offset date from config file with modified date from ALL bronze source file. If "modified_date" is greater than "offset_date" ; then, that specific record will be replaced within 
+
+_Imagine this Scenario:_
+- We have millions of records in the entire table, but we only need a select few of records to be updated 
+- Also, the window of opportunity to upload might be limited . File is very huge so it is not possible to reload everything at once.
+- Hence, we need to figure out which records #1) Needs an Update  **&** #2) Can be inserted from the source table as a fresh/new record
+- This is when Incremental Load comes into place. 
+
+---
+**How do we know when to use which load?**
 _Full Load_
+- When setting up a new data system or data warehouse, full load can be more straightforward & efficient as it doesn't require tracking
+- If small volumes of data, then it can be more straightforward & effiicent because it doesn't require tracking changes.
+- When consistency is a very important aspect of the transformation.
 
+_Incremental Load_
+- Optimal for datasets with vast amount of data - full loads wold be impractial... ( too much time and effort! )
+- Ideal for environments with frequent data changes or updates.
+- Lower impact on system performance during loading time.
+
+---
 ## _Medallion Procedure ( in Databricks ) - Basically, what's the logic behind the code?:_  
 
 _Bronze -> Silver_

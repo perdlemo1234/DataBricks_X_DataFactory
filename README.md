@@ -7,7 +7,7 @@ This is a documentation of my journey implementing a medallion architecture wher
 ### **Outline:**
 ###### This architecture is organised into a series of data layers, each serving a specific purpose in handling the transformation and cleansing of the data. Essentially, at each stage, data is made more organised and keep tracks of when each record is updated and how it's being updated. Implemented for modern data lakes and data platforms to facilitate data management & analytics. Link explaning the medallion architecture -> (https://www.databricks.com/glossary/medallion-architecture#:~:text=The%20Gold%20layer%20is%20for,quality%20rules%20are%20applied%20here )
 ![image](https://github.com/user-attachments/assets/214dee16-58bc-4ecb-b35b-85e0425c0c81) 
-#####( Without the inclusion of the Landing Zone )
+##### ( Without the inclusion of the Landing Zone )
 ---
 ### _Landing Zone (optional):_  
 ###### 

@@ -110,23 +110,24 @@ So, the function returns arrays of directory paths called "later_directories" , 
 Thought it might seem quite pointless now, the seperation of directories allows us to effectively pinpoint which directories to focus on / save resources finding the latest file. 
 
 #### _Bronze -> Silver:_
-##### Below consists a rough outline of how my experimented transformation would look like if there's a **full load** : 
+##### Below is a rough outline of how the experimented transformation would look like if there's a _**FULL LOAD**_: 
 1) Load Bronze .csv files  ( from landing zone )
 2) Use the ( "get_directories_by_date" ) function to obtain the array ( "later_directories" ) which contains file paths of the directories past the "offset_date".
-3) From "later_directories" array, obtain the **latest** "date" directory. From **latest** "date" directory, choose **latest** "date_time" file for full loading.
-4) Perform "full_load" using the "full_load" function. _( Additional details to be discussed later on )_
+3) From "later_directories" array, obtain the **latest** "date" directory. Subsequently, from **latest** "date" directory, choose **latest** "date_time" file for full loading.
+4) Perform "full_load" using the "full_load" function. _( Further details can be referred under small technical things )_
+5) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file.
 
+##### Below is a rough outline of how the experimented transformation would look like if there's an _**INCREMENTAL LOAD**_:
+1) Load Bronze .csv files  ( from landing zone )
+2) Perform "Incremental_Load" using the "incremental_load" function provided. ( Most important, perform deduplication! )
+3) ![image](https://github.com/user-attachments/assets/c07d99c9-058f-4049-8454-18b654c2586c) <- The main part of incremental loading.  
+4) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
 
+**NOTE!!:**
+- Blob Service CLient Object. (specific to ADF) How does it work? How do we do it? 
+- Both load functions don't have thorough explanation because both are similar. I just need to point out some major details!
+- 
 
-5) Read offset date from offset file from a specific category.
-6) Compare offsetdate with modified date from source file.
-7) If modified date is greater than offset date, we update that record into silver dataset. If a specific record is new; then, insert that as a new record into the silver table.
-8) Perform deduplication.
-9) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
-
-[ Reunderstand the code ]
-[Check code and comment approriately]
-[Give my specific example and give appropriate and elaborate analysis of the code 
 [Comment why there's no bronze->silver function]
 
 #### _Silver -> Gold:_  

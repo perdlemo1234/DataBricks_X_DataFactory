@@ -68,11 +68,11 @@ Sadly, there's not a picture that I can put because parquet format can be viewed
 ###### Typically, this involves combining columns from different datasets or using a simple arithemtic calculation to obtain a brand new column. Further details will be discussed within  
 ---
 ## _Different Types of Load:_
-_Full Load / Destructive Load_
+_Full Load / Destructive Load_  
 ![image](https://github.com/user-attachments/assets/b0dd11ec-ecf8-4519-8f24-05f8ef06aa90)
 Either called full or destructive load.The full load in ETL involves truncating the target table before loading ALL data from source to target table. Hence, it being called a destructive load. Truncating involves removing _**ALL records**_ from the table in a database, but it does not affect the schema ; essentially, leaving a blank skeletion / structure. This type of load is very straightforward and can be easily implemented. 
 
-_Differential/Incremental/Fractional Load_
+_Differential/Incremental/Fractional Load_  
 ![image](https://github.com/user-attachments/assets/8c32e280-4b79-4f98-b1be-86a012abde7a)
 As the name suggests, only a portion of the data from the target table is updated. Why do we do this? In my experimentation, I compared the offset date from config file with modified date from ALL bronze source file. If "modified_date" is greater than "offset_date" ; then, that specific record will be replaced within 
 

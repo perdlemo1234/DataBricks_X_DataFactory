@@ -102,7 +102,7 @@ _Incremental Load:_
 ## _Medallion Procedure ( in Databricks ) - Basically, what's the logic behind the code?:_  
 Upon explaining the unique layers and loading methods, we can finally employ , test , and verify data transformations at each major data layer. 
 
-#### _Getting directories by date (excluding time):_
+### _Getting directories by date (excluding time):_
 ![image](https://github.com/user-attachments/assets/63a2de86-5d40-4e0c-a1a2-eaaffdeb6130) <- "get_directories_by_date" function 
 This function seperates the directory paths into 2 arrays. One where the dates are before the _offset date,_ and the other is after the _offset date._ 
 
@@ -124,7 +124,7 @@ Thought it might seem quite pointless now, the seperation of directories allows 
 3) ![image](https://github.com/user-attachments/assets/c07d99c9-058f-4049-8454-18b654c2586c) <- The main part of incremental loading.  
 4) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
 
-**NOTE!!:** [ TO BE POLISHED TOMORROW ]
+#### **NOTE!!:** [ TO BE POLISHED TOMORROW ]
 - Blob Service CLient Object. (specific to ADF) How does it work? How do we do it? 
 - Both load functions don't have thorough explanation because both are similar. I just need to point out some major details!
 - [Comment why there's no bronze->silver function]

@@ -55,7 +55,7 @@ However, this was created from scratch and Rnd ; so , the tables _"offset_date"_
 
 In the silver layer, the files are stored within directories based on subject categories. The files must be read through code because they are stored in a Parquet format. 
 
-#### _How would the silver file look like?_
+### _How would the silver file look like?_
 Sadly, there's not a picture that I can put because parquet format can be viewed under a .csv format when code is executed. _(no credits left)_ Through the Rnd, the expected silver parquet file output should be consolidating all available records and also updating records which has been modified after the offset date. 
 
 ###### Further details to be discussed within the medallion procedure:

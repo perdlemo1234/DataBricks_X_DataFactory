@@ -111,6 +111,7 @@ So, the function returns arrays of directory paths called "later_directories" , 
 Thought it might seem quite pointless now, the seperation of directories allows us to effectively pinpoint which directories to focus on / save resources finding the latest file. 
 
 ### _Bronze -> Silver:_
+![image](https://github.com/user-attachments/assets/458d82eb-a24f-4c7f-8189-1f29a5cbd143)
 ### Below is a rough outline of how the experimented transformation would look like if there's a _**FULL LOAD**_: 
 1) Load Bronze .csv files  ( from landing zone )
 2) Use the ( "get_directories_by_date" ) function to obtain the array ( "later_directories" ) which contains file paths of the directories past the "offset_date".
@@ -124,13 +125,20 @@ Thought it might seem quite pointless now, the seperation of directories allows 
 3) ![image](https://github.com/user-attachments/assets/c07d99c9-058f-4049-8454-18b654c2586c) _<- The main part of incremental loading._  
 4) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
 
-#### **NOTE!!:** [ TO BE POLISHED TOMORROW ]
-- The Blob Service Client has been mentioned in both load methods. It's primary purpose i sto facilitate interaction with storage service, perform various operations related to data blobs. In this area, i's mainly to upload the related csv string into 
+#### _**Additional Info for Bronze -> Silver!!:**_
+- The Blob Service Client has been mentioned in both load methods. It's primary purpose is to facilitate interaction with storage service, perform various operations related to data blobs. For our load process, it's mainly to upload the related .csv string ( originally from Pandas Dataframe )   
 - Both load functions don't have thorough explanation because both are quite similar. Major details have been pointed out in this documentation. 
-- [Comment why there's no bronze->silver function]
+- I did not include a dedicated **Bronze->Silver** transformation due to experimentation. Because it is up to the discretion of the user to choose incremental or full load.
 
-### _Silver -> Gold:_  
+### _Silver -> Gold:_
+![image](https://github.com/user-attachments/assets/6877f52c-3671-4a51-8d93-010ca49a43eb)
+1) Read Parquet file from all relevant data from the silver layer into a Spark Delta DataFrame. 
+2) From all Spark Delta Dataframe, perform all necessary transformations.
+3) Use _**"load_into_gold"**_ function to grab transformed data into Azure Data Factory Gold Container.
+4) Verify that it is in the gold container by reading Delta file into a Spark Dataframe and displaying it.
 
+#### _**Additonal Note for Silver -> Gold:**_
+1) Since there's not a one size fits all transformation, like bronze -> silver, there's not a dedicated function for this. Instead , the user should create a dedicated cell for that unique transformation. ( E.G. "dim_product" or "fact_sales" )
 
 ## _Small Technical Things to take note of:_
 

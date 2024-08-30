@@ -121,7 +121,7 @@ Thought it might seem quite pointless now, the seperation of directories allows 
 
 ### Below is a rough outline of how the experimented transformation would look like if there's an _**INCREMENTAL LOAD**_:
 1) Load Bronze .csv files  ( from landing zone )
-2) Perform "Incremental_Load" using the "incremental_load" function provided. ( Most important, perform deduplication! )
+2) Perform "Incremental_Load" using the "incremental_load" function provided. ( Most importantly, perform deduplication , ranking , and dropping certain rows based on rank!! )
 3) ![image](https://github.com/user-attachments/assets/c07d99c9-058f-4049-8454-18b654c2586c) _<- The main part of incremental loading._  
 4) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
 
@@ -140,6 +140,8 @@ Thought it might seem quite pointless now, the seperation of directories allows 
 #### _**Additonal Note for Silver -> Gold:**_
 1) Since there's not a one size fits all transformation, like bronze -> silver, there's not a dedicated function for this. Instead , the user should create a dedicated cell for that unique transformation. ( E.G. "dim_product" or "fact_sales" )
 
-## _Small Technical Things to take note of:_
-
-
+## _What I learned?:_
+1) Formatting is sensitive. Be sure to make a uniform at different system layers. For example: **Date_Format** & **Date_Time Format** are two completely different formattings and can affect how Pandas detects the latest and earliest date.
+2) Seperate libraries & packages, parameters, & functions into different cells for better readability and tracking. Also, fixed parameters can be announced in one cell whereas variable paramters can be declared at different cells.
+3) Obtain "access key" name from storage account. May want to consider implementing different types of security layers for better protection.
+4) Implementing direcct access to different storages can be quite frustrating, but once the conncetion has been writtn and verified, it can be a breeze after that.

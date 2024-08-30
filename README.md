@@ -42,8 +42,8 @@ Since I was starting from scratch, I artifically created a number of bronze csv 
 - Change record of data when date is later than the "offset_date". "offset_date" is then updated accordingly. 
 
 However, this was created from scratch and Rnd ; so , the tables _"offset_date"_ and _"table"_ are included for simplicity:  
+![image](https://github.com/user-attachments/assets/248ecfa0-899e-472c-abe9-0cd756f3a5a1)  
 
-![image](https://github.com/user-attachments/assets/248ecfa0-899e-472c-abe9-0cd756f3a5a1)
 ---
 ### _Silver Layer:_
 ![image](https://github.com/user-attachments/assets/cff9a073-6427-4527-9541-8fc16f7ce9cc)

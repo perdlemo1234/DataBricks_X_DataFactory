@@ -121,12 +121,12 @@ Thought it might seem quite pointless now, the seperation of directories allows 
 ### Below is a rough outline of how the experimented transformation would look like if there's an _**INCREMENTAL LOAD**_:
 1) Load Bronze .csv files  ( from landing zone )
 2) Perform "Incremental_Load" using the "incremental_load" function provided. ( Most important, perform deduplication! )
-3) ![image](https://github.com/user-attachments/assets/c07d99c9-058f-4049-8454-18b654c2586c) <- The main part of incremental loading.  
+3) ![image](https://github.com/user-attachments/assets/c07d99c9-058f-4049-8454-18b654c2586c) _<- The main part of incremental loading._  
 4) To verify the accuracy of transformation, load silver parquet format into dataframe and view it as a .csv file. 
 
 #### **NOTE!!:** [ TO BE POLISHED TOMORROW ]
-- Blob Service CLient Object. (specific to ADF) How does it work? How do we do it? 
-- Both load functions don't have thorough explanation because both are similar. I just need to point out some major details!
+- The Blob Service Client has been mentioned in both load methods. It's primary purpose i sto facilitate interaction with storage service, perform various operations related to data blobs. In this area, i's mainly to upload the related csv string into 
+- Both load functions don't have thorough explanation because both are quite similar. Major details have been pointed out in this documentation. 
 - [Comment why there's no bronze->silver function]
 
 ### _Silver -> Gold:_  

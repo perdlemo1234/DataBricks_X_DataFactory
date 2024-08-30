@@ -30,7 +30,7 @@ This is a documentation of my journey implementing a medallion architecture wher
 Since I was starting from scratch, I artifically created a number of bronze csv files , seperated them into different directories based on distinct topics ( E.G. sales & product )  
 
 ![image](https://github.com/user-attachments/assets/fc32731d-dfd9-4bf4-8c5a-f2942d244b32)
-#### From the picture, we can point out a few important things from my experimentation:
+### From the picture, we can point out a few important things from my experimentation:
 - The Bronze directory can be split into different categories tackling different business challenges/problems ( e.g. sales , product , health_care ) 
 - Continuing the breadcrumb trail, directories are split into "ingestion_daes" like _( 20240710 , 20240715 , 20240717 )_ . Note that the naming convention is now ONLY dates and not date_time. 
 - Within each "ingestion_date" directory, multiple .csv files are created based on certain ingestion time intervals The CSV files . By logic, all .csv files should have their "date_time" greater than the title of the directory they belong to. However, sometimes, the system or manual input might make an input mistake and may want to include a file which originates from an earlier date. So, technially, files from any "date_time" can be included ; however, if majority of the files are from an "earlier date" , it might be worth investigating further.   
